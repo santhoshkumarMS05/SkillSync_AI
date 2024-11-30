@@ -1,0 +1,104 @@
+/* General container styling with refined look */
+.recommendations-content {
+    background: rgba(255, 255, 255, 0.85); /* Slightly transparent white background */
+    padding: 40px; /* Added more padding for breathing space */
+    border-radius: 20px; /* Increased border-radius for softer corners */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More prominent shadow for a floating effect */
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    margin: 40px auto; /* Centers the container on the page with margin */
+    backdrop-filter: blur(10px); /* Optional: Adds blur effect to background */
+}
+
+/* Title styling */
+.recommendations-title {
+    color: #003366; /* Dark blue for a professional feel */
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700; /* Bold title for emphasis */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better contrast */
+}
+
+/* Recommendations list styling */
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased spacing between recommendation cards */
+    margin-bottom: 30px; /* Additional space below the list */
+}
+
+/* Recommendation card styling */
+.recommendation-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for a floating card look */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+    cursor: pointer;
+}
+
+/* Job Title styling */
+.job-title {
+    color: #283b4e; /* Blue for the job title for distinction */
+    font-size: 1.8rem;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin-bottom: 10px;
+}
+
+/* Skills list styling */
+.skills-container {
+    margin-top: 15px; /* Space between job title and skills */
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Proper spacing between skill items */
+}
+
+.skill-item {
+    background: linear-gradient(135deg, #2a7f6f, #00bcd4);
+    color: #fff;
+    padding: 8px 15px; /* More padding for readability */
+    border-radius: 15px; /* Rounded corners for skill items */
+    font-size: 1.2rem; /* Slightly larger font for readability */
+    font-weight: 500; /* Medium weight for text */
+}
+
+/* No recommendations styling */
+.no-recommendations {
+    color: #999;
+    font-size: 1.3rem;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* Back button styling */
+.back-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #232a28, #00bcd4);
+
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
