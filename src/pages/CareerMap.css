@@ -1,0 +1,175 @@
+/* Career Map Container */
+.career-map-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #f4f9f9;
+}
+.career-heading{
+  background: linear-gradient(135deg, #2a7f6f, #00bcd4);
+  padding:5px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+  
+.career-heading h1 {
+  font-size: 3.5rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  color: #f4f9f9;
+  margin-bottom: 20px;
+}
+  
+.career-heading p {
+  font-size: 1.4rem;
+  color:#e3f5f1;
+  margin-bottom: 40px;
+}
+  
+
+/* Career Introduction Section */
+.career-introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  background-color: #cdf0e6;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+}
+  .career-intro-text p {
+  width: 100%;
+  max-width: 1800px;
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  }
+.career-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+}
+  
+.career-image {
+  width: 48%; 
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.career-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.career-intro-text:last-of-type {
+  margin-top: 20px;
+}
+  
+  
+/* Profession List */
+.profession-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+  
+.profession-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+  
+.profession-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid #2a7f6f;
+  background-color: #e3f5f1;
+}
+  
+.profession-item h3 {
+  font-size: 1.4rem;
+  color: #333;
+  text-transform: uppercase;
+}
+  
+/* Modal */
+.profession-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+  
+.modal-content {
+  background-color:#d6f0e8;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  max-width: 80%;
+  width: 800px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+  
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.modal-header h2 {
+  font-size: 2rem;
+  color: #2a7f6f;
+  margin-bottom: 10px;
+}
+  
+.close-button {
+  padding: 10px 20px;
+  background-color: #ff5e57;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+  
+.close-button:hover {
+  background-color: #e64545;
+  transform: scale(1.1);
+}
+  
+/* Modal Image */
+.modal-body {
+  margin-top: 20px;
+}
+  
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}

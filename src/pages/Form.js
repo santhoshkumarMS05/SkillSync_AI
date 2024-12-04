@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css';
 
 const Form = () => {
+
+  useEffect(() => {
+    const body = document.body;
+    body.classList.add('page-transition');
+
+    // Remove the transition class after page load
+    setTimeout(() => {
+      body.classList.remove('page-transition');
+    }, 500);
+
+    return () => {
+      body.classList.add('page-transition');
+    };
+  }, []);
+
   const [formData, setFormData] = useState({
     userName: '',
     userEmail: '',
@@ -52,16 +67,18 @@ const Form = () => {
       setError('Failed to get recommendations. Please try again.');
     }
   };
-
   const formPageStyle = {
-    backgroundImage: "url('/background.jpg')",
+    backgroundImage: `url('/background.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: '100vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    opacity: 0, // Start with opacity 0 for smooth transition
+    animation: 'fadeIn 0.5s forwards', // Add fade-in animation
   };
+  
 
   return (
     <div style={formPageStyle}>
@@ -127,6 +144,7 @@ const Form = () => {
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>
+      
     </div>
   );
 };

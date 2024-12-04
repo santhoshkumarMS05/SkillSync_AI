@@ -1,8 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Recommendations.css';
 
 const Recommendations = () => {
+  useEffect(() => {
+    const body = document.body;
+    body.classList.add('page-transition');
+
+    // Remove the transition class after page load
+    setTimeout(() => {
+      body.classList.remove('page-transition');
+    }, 500);
+
+    return () => {
+      body.classList.add('page-transition');
+    };
+  }, []);
   const location = useLocation();
   const navigate = useNavigate();
   const recommendations = location.state?.recommendations || [];
@@ -64,6 +77,7 @@ const Recommendations = () => {
         </button>
       </div>
     </div>
+    
   );
 };
 

@@ -1,89 +1,103 @@
-
-
 /* Form container styles */
 .form-container {
-    max-width: 1000px; /* Increase the form width */
-    width: 100%; /* Ensure it takes full width up to the max-width */
-    margin: 60px auto; /* Add spacing from top */
-    padding: 40px; /* Increase padding for more space inside */
-    background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
-    border-radius: 20px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    overflow: hidden; /* Prevent content from overflowing */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Title styling */
+.form-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2a7f6f;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  background-color: #f5f5f5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2a7f6f;
+  box-shadow: 0 0 10px rgba(42, 127, 111, 0.5);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button styling */
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background-color: #2a7f6f;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #00bcd4;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Title styling */
-  .form-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: #2a7f6f;
-    margin-bottom: 20px; /* Reduced margin for better spacing */
+
+  to {
+    opacity: 1;
   }
-  
-  /* Form styling */
-  .user-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  label {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.3rem;
-    color: #333;
-  }
-  
-  input, textarea {
-    padding: 12px; /* Reduced padding for better fit */
-    font-size: 1.1rem;
-    border-radius: 10px;
-    border: 2px solid #ddd;
-    background-color: #f5f5f5;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: #2a7f6f;
-    box-shadow: 0 0 10px rgba(42, 127, 111, 0.5);
-    outline: none;
-  }
-  
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  
-  /* Submit button styling */
-  .submit-button {
-    padding: 12px 20px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: white;
-    background-color: #2a7f6f;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%; /* Make button full-width */
-  }
-  
-  .submit-button:hover {
-    background-color: #00bcd4;
-    transform: translateY(-2px);
-  }
-  
-  .submit-button:active {
-    transform: translateY(2px);
-  }
-  
+}
+
+/* Optional: Smooth transition between pages */
+body {
+  transition: opacity 0.5s ease-in-out;
+}

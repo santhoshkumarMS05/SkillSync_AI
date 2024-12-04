@@ -1,16 +1,21 @@
-# Importing necessary modules
+from flask import Flask, request, jsonify
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from flask_cors import CORS
 from sklearnex import patch_sklearn  # Intel extension for Scikit-learn
-patch_sklearn()  # Apply Intel optimizations to Scikit-learn
 
-from flask import Flask, request, jsonify  # Flask for building the API
-import pandas as pd  # For handling the dataset
-from sklearn.feature_extraction.text import TfidfVectorizer  # For text vectorization
-from sklearn.metrics.pairwise import cosine_similarity  # For calculating similarity
-from flask_cors import CORS  # For handling Cross-Origin Resource Sharing (CORS)
+# Patch Scikit-learn with Intel optimizations
+patch_sklearn()
 
 # Initialize the Flask app
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes (or specify a more restricted policy)
+CORS(app)  # Example: Allow requests from React app
+
+# Home route
+@app.route('/')
+def home():
+    return 'Welcome to the Job Recommendation System with Intel AI Toolkit!'
 
 # Load and preprocess the dataset
 file_path = "jobss_cleaned.csv"  # Ensure this file is in the same directory as the script
@@ -24,7 +29,7 @@ except FileNotFoundError:
 # Function to preprocess the data
 def preprocess_data(df):
     # Fill missing values and combine skills and job title
-    df['Combined_Skills'] = df['key_skills'].fillna('') + ' ' + df['job_title'].fillna('')  # Combining skills and job title
+    df['Combined_Skills'] = df['key_skills'].fillna('') + ' ' + df['job_title'].fillna('')
     return df
 
 df = preprocess_data(df)
@@ -34,8 +39,8 @@ def recommend_jobs(skills_input, df, num_recommendations=5):
     try:
         # Vectorize the combined skills and the user's input skills
         vectorizer = TfidfVectorizer()
-        tfidf_matrix = vectorizer.fit_transform(df['Combined_Skills'])  # Vectorizing the dataset
-        user_vector = vectorizer.transform([skills_input])  # Vectorizing the user's input
+        tfidf_matrix = vectorizer.fit_transform(df['Combined_Skills'])
+        user_vector = vectorizer.transform([skills_input])
 
         # Compute cosine similarity between user input and job data
         cosine_sim = cosine_similarity(user_vector, tfidf_matrix).flatten()
@@ -60,7 +65,7 @@ def predict():
         # Extract input data from the POST request
         data = request.json
         print(f"Received data: {data}")  # Add this line to see the incoming data
-        
+
         skills = data.get('skills', '')
         desired_role = data.get('desiredRole', '')
 
@@ -89,5 +94,5 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 # Run the Flask app
-if __name__ == '__main__':
+if __name__ == '_main_':
     app.run(debug=True)
