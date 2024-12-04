@@ -1,0 +1,40 @@
+Project Summary: Skill Sync - 4W and 1H Analysis
+
+What is Skill Sync?
+  Skill Sync is a web-based application that helps users find the most relevant job roles based on their skillsets and career aspirations. By leveraging advanced AI technologies and Intel's oneAPI toolkits, the app provides precise job recommendations in real-time.
+
+Why was it created?
+  The gap between job seekers and recruiters is a persistent challenge, as candidates often struggle to identify roles aligned with their skills, and employers find it hard to locate the right talent. Skill Sync addresses this issue by:
+
+  Streamlining the job search process.
+  Highlighting skill gaps for targeted self-improvement.
+  Optimizing recruitment with better candidate-job matching.
+
+Who is it for?
+  Skill Sync is designed for:
+
+  Job Seekers: Individuals looking for roles that match their skills.
+  Students: Fresh graduates aiming to align their capabilities with industry requirements.
+  Recruiters: HR teams seeking tools to identify well-suited candidates.
+
+Where does it operate?
+  Skill Sync operates on a web platform created using React.js for the frontend and Flask for the backend. It can be accessed globally and integrates seamlessly with job portals or educational platforms for extended functionality.
+
+How does it work?
+  Frontend:
+    Users input their skills and job expectations into an intuitive React.js interface.
+  Backend:
+    The user data is securely passed to the Flask backend.
+  Processing:
+    Flask interacts with an AI-powered model optimized using Intel's oneAPI toolkits:
+      Intel Base Toolkit: Enhances performance of backend computations.
+      Intel AI Analytics Toolkit: Speeds up data processing and machine learning computations with libraries like scikit-learn and NumPy.
+    The ML model processes the input using TF-IDF and cosine similarity to recommend the most relevant job roles.
+    Output:
+      The recommendations are sent back to the React.js frontend and displayed to the user in a clean, actionable format.
+Key Features
+  Real-time Recommendations: Instant job role suggestions based on user-provided skills.
+  Intel Optimization: High-speed data processing using Intel’s AI toolkits.
+  Scalable Architecture: Flexible integration with other job platforms.
+  Career Map: As of now, the platform provides a detailed career map for 20 job roles, helping users explore skill requirements and growth opportunities for these professions. In the future, we aim to expand the Career Map to include more job roles, catering to diverse career aspirations.
+
