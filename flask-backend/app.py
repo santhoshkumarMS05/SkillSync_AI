@@ -18,7 +18,7 @@ def home():
     return 'Welcome to the Job Recommendation System with Intel AI Toolkit!'
 
 # Load and preprocess the dataset
-file_path = "jobss_cleaned.csv"  # Ensure this file is in the same directory as the script
+file_path = "jobss_cleaned.csv" 
 try:
     df = pd.read_csv(file_path)
     print(f"Data loaded successfully from {file_path}")
@@ -28,23 +28,19 @@ except FileNotFoundError:
 
 # Function to preprocess the data
 def preprocess_data(df):
-    # Fill missing values and combine skills and job title
     df['Combined_Skills'] = df['key_skills'].fillna('') + ' ' + df['job_title'].fillna('')
     return df
 
 df = preprocess_data(df)
 
-# Function to recommend job titles based on input skills
 def recommend_jobs(skills_input, df, num_recommendations=5):
     try:
-        # Vectorize the combined skills and the user's input skills
         vectorizer = TfidfVectorizer()
         tfidf_matrix = vectorizer.fit_transform(df['Combined_Skills'])
         user_vector = vectorizer.transform([skills_input])
 
-        # Compute cosine similarity between user input and job data
         cosine_sim = cosine_similarity(user_vector, tfidf_matrix).flatten()
-        similar_indices = cosine_sim.argsort()[::-1]  # Sort the indices based on similarity
+        similar_indices = cosine_sim.argsort()[::-1]  
 
         recommended_jobs = []
         for idx in similar_indices[:num_recommendations]:
@@ -64,7 +60,7 @@ def predict():
     try:
         # Extract input data from the POST request
         data = request.json
-        print(f"Received data: {data}")  # Add this line to see the incoming data
+        print(f"Received data: {data}") 
 
         skills = data.get('skills', '')
         desired_role = data.get('desiredRole', '')
